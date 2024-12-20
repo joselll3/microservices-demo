@@ -33,4 +33,3 @@ build/
 .vscode/
 
 *.log
-twitter-to-kafka-service/src/main/java/com/microservices/demo/twitter/to/kafka/service/init/impl/MockKafkaStreamInitializer.java
