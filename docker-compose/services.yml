@@ -6,9 +6,7 @@ services:
       - "7007:7007"
     volumes:
       - "./docker-logs:/workspace/twitter-to-kafka-service/logs"
-      - "./check-config-server-started.sh:/usr/local/bin/check-config-server-started.sh"
     user: root
-    entrypoint: ["check-config-server-started.sh"]
     depends_on:
       - config-server
     environment:
@@ -38,17 +36,16 @@ services:
       resources:
         limits:
           cpus: '0.001'
-          memory: 617M
+          memory: 1300M
         reservations:
           cpus: '0.0001'
-          memory: 617M
+          memory: 1300M
   kafka-to-elastic-service:
     image: ${GROUP_ID}/kafka.to.elastic.service:${SERVICE_VERSION:-latest}
     ports:
       - "5006:5006"
     volumes:
       - "./docker-logs:/workspace/kafka-to-elastic-service/logs"
-      - "./check-kafka-topics-created.sh:/usr/local/bin/check-kafka-topics-created.sh"
     user: root
 
     environment:

@@ -9,3 +9,9 @@ spring:
       uri: http://localhost:9999
       username: spring_cloud_user
       password: springCloud_Pwd!
+      fail-fast: true
+  retry:
+    maxAttempts: 10
+    initialInterval: 1000
+    multiplier: 1.5
+    maxInterval: 5000
